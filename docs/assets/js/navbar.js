@@ -11,9 +11,25 @@ window.addEventListener('scroll', function() {
 
 
 
+  const dropdownToggle = document.querySelector('.nav-item.dropdown .dropdown');
+  const dropdownMenu = document.querySelector('.nav-item.dropdown .dropdown-menu');
+  let isDropdownVisible = false;
+  dropdownToggle.addEventListener('click', function(e) {
 
+    if (window.innerWidth <992){
+    if (isDropdownVisible) {
+      dropdownMenu.classList.remove('show');
+      isDropdownVisible = false;
+    } else {
+      dropdownMenu.classList.add('show');
+      isDropdownVisible = true;
+    }
 
-
+  }else {
+    e.stopPropagation(); 
+  return;
+  }
+  });
 
 
 
